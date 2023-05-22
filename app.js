@@ -3,6 +3,9 @@
 // renvoi au hazard un choix parmi le tableau
 const choix = ['pierre', 'papier', 'ciseaux'];
 
+function getComputerChoice() {
+  return choix[Math.floor(Math.random() * 3)];
+}
 // fonction qui joue un tour et retourne le resultat dans une variable
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -26,13 +29,8 @@ function game() {
   // tout est contenu dans une boucle de 5 tours
   for (let i = 0; i < 5; i++) {
     // crée un choix ordinateur
-    function getComputerChoice() {
-      return choix[Math.floor(Math.random() * 3)];
-    }
     const computerSelection = getComputerChoice();
-
     // appel de l'entrée utilisateur verifié
-
     let entreeUtilisateur = prompt(
       'Veuillez entre soit pierre,papier ou ciseaux'
     );
